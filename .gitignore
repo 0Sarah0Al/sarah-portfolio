@@ -1,0 +1,9 @@
+# Ignore a specific file
+.DS_Store
+
+# Ignore an entire folder (add a trailing slash)
+node_modules/
+/dist/
+
+# Ignore all files with a specific extension (e.g., log files)
+*.log
