@@ -234,8 +234,7 @@
 			percentPosition: true
 		});
 
-
-		// 3. Bind filter button click
+		// 2. Bind filter button click
 		$('.isotope-filter-buttons').on('click', 'button', function() {
 			var filterValue = $(this).attr('data-filter');		
 			// Apply the chosen filter

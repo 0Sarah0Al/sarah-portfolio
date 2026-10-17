@@ -4,6 +4,8 @@
 # Ignore an entire folder (add a trailing slash)
 node_modules/
 /dist/
+*.min.map
+*.css.map
 
 # Ignore all files with a specific extension (e.g., log files)
 *.log
