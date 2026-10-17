@@ -3,37 +3,19 @@
 	'use strict';
 
 
-
-	var isMobile = {
-		Android: function() {
-			return navigator.userAgent.match(/Android/i);
-		},
-			BlackBerry: function() {
-			return navigator.userAgent.match(/BlackBerry/i);
-		},
-			iOS: function() {
-			return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-		},
-			Opera: function() {
-			return navigator.userAgent.match(/Opera Mini/i);
-		},
-			Windows: function() {
-			return navigator.userAgent.match(/IEMobile/i);
-		},
-			any: function() {
-			return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-		}
-	};
-
 	var fullHeight = function() {
+		var setHeight = function() {
+			// Use innerHeight to account for mobile viewports better
+			$('.js-fullheight').css('height', window.innerHeight);
+		};
 
-		if ( !isMobile.any() ) {
-			$('.js-fullheight').css('height', $(window).height());
-			$(window).resize(function(){
-				$('.js-fullheight').css('height', $(window).height());
-			});
-		}
+		// Run on load
+		setHeight();
 
+		// Run on window resize or orientation change
+		$(window).on('resize orientationchange', function() {
+			setHeight();
+		});
 	};
 
 
